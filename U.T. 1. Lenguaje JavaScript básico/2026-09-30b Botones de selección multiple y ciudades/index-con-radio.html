@@ -13,10 +13,13 @@
         for (const ciudad of ciudades) {
             const nCheckbox = document.createElement('input');
             nForm.appendChild(nCheckbox);
-            nCheckbox.setAttribute('type', 'checkbox');
-            nCheckbox.setAttribute('name', ciudad.codigoPostal);
+            nCheckbox.setAttribute('type', 'radio');
+            nCheckbox.setAttribute('name', 'ciudad');
             nCheckbox.setAttribute('id', `eChk${ciudad.codigoPostal}`);
-            nCheckbox.setAttribute('value', 'marcado');
+            nCheckbox.setAttribute('value', ciudad.codigoPostal);
+            if (ciudad.codigoPostal === '30800') {
+                nCheckbox.setAttribute('checked', '');
+            }
     
             const nLabel = document.createElement('label');
             nForm.appendChild(nLabel);
